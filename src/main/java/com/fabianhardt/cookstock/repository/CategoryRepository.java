@@ -1,7 +1,9 @@
-package com.fabianhardt.cookstock.repositories;
+package com.fabianhardt.cookstock.repository;
 
-import com.fabianhardt.cookstock.entities.Category;
+import com.fabianhardt.cookstock.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
 
 /**
  * Repository interface for the access to the {@link Category}-Entities.
@@ -14,4 +16,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
+    /**
+     *
+     *
+     * @param name
+     * @return
+     */
+    //TODO JavaDoc
+    Optional<Category> findByName(String name);
+
+    boolean existsByName(String categoryByName);
 }

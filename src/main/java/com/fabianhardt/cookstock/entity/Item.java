@@ -1,7 +1,8 @@
-package com.fabianhardt.cookstock.entities;
+package com.fabianhardt.cookstock.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.validator.constraints.UUID;
 
 import java.time.LocalDate;
 
@@ -11,7 +12,7 @@ import java.time.LocalDate;
  * expiration, a minimale quantity which should be in stock, a {@link Category} and a
  * {@link Location}.
  * The name of an item is unique.
- * For each field a get and set methode is provided.
+ * For each field, a get and set methode is provided.
  *
  * @author Fabian Hardt
  */

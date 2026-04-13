@@ -1,4 +1,4 @@
-package com.fabianhardt.cookstock.entities;
+package com.fabianhardt.cookstock.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import java.util.List;
  * shopping list is the default shopping list.
  * Automatic added shopping items will be added to the default shopping list.
  * The name of a shopping list is unique.
- * For each field a get and set methode is provided.
+ * For each field, a get and set methode is provided.
  *
  * @author Fabian Hardt
  */
@@ -46,6 +46,6 @@ public class ShoppingList {
     /**
      * Shopping items of this shopping list
      */
-    @OneToMany
+    @OneToMany(mappedBy = "shoppingList")
     private List<ShoppingItem> shoppingItemList;
 }

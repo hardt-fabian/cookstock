@@ -1,8 +1,9 @@
-package com.fabianhardt.cookstock.repositories;
+package com.fabianhardt.cookstock.repository;
 
-import com.fabianhardt.cookstock.entities.Category;
-import com.fabianhardt.cookstock.entities.Location;
+import com.fabianhardt.cookstock.entity.Location;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
 
 /**
  * Repository interface for the access to the {@link Location}-Entities.
@@ -15,4 +16,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface LocationRepository extends JpaRepository<Location, Long> {
 
+    Optional<Location> findByName(String name);
 }
