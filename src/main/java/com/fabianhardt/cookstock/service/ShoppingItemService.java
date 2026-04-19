@@ -14,8 +14,6 @@ import com.fabianhardt.cookstock.mapper.ShoppingItemMapper;
 import com.fabianhardt.cookstock.repository.CategoryRepository;
 import com.fabianhardt.cookstock.repository.ShoppingItemRepository;
 import com.fabianhardt.cookstock.repository.ShoppingListRepository;
-import jakarta.transaction.Transactional;
-import org.apache.tomcat.util.http.fileupload.InvalidFileNameException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -85,7 +83,7 @@ public class ShoppingItemService {
             shoppingItem.setCategory(category);
         }
         if (request.getShoppingListId() == null) {
-            throw new InvalidFieldException("ShoppingListId is required");
+            throw new InvalidFieldException("ShoppingListId for shoppingItem is required");
         }
         ShoppingList shoppingList =
                 this.shoppingListRepository.findById(request.getShoppingListId()).orElseThrow(() -> new ShoppingListNotFoundException(request.getShoppingListId()));

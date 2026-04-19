@@ -1,6 +1,5 @@
 package com.fabianhardt.cookstock.dto.location;
 
-import com.fabianhardt.cookstock.entity.Category;
 import com.fabianhardt.cookstock.entity.Location;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

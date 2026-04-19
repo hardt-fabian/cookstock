@@ -17,7 +17,8 @@ import java.time.LocalDate;
  * This DTO supports the Builder pattern for flexible object creation.
  * All fields can be set using getters and setters or the Builder.
  * <p>
- * All fields are optional and can be null.
+ * All fields are optional. If the field is 'empty' there is no update for
+ * the field.
  * </p>
  *
  * @author Fabian Hardt

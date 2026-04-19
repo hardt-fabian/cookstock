@@ -15,6 +15,9 @@ import lombok.Data;
 @AllArgsConstructor
 public class CreateLocationRequest {
 
+    /**
+     * Name of the location
+     */
     @NotBlank
     @NotNull
     private String name;

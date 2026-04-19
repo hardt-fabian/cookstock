@@ -75,9 +75,7 @@ public class ItemService {
      */
     public ItemResponse createItem(CreateItemRequest request) {
         String itemName = request.getName();
-        Optional<Item> itemByName =
-                this.itemRepository.findByName(itemName);
-        if (itemByName.isPresent()) {
+        if (this.itemRepository.existsByName(itemName)) {
             throw new ItemAlreadyExistsException(itemName);
         }
         Item item = this.itemMapper.toEntity(request);

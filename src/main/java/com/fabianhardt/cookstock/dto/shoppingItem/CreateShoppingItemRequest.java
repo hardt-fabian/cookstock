@@ -1,5 +1,6 @@
 package com.fabianhardt.cookstock.dto.shoppingItem;
 
+import com.fabianhardt.cookstock.entity.ShoppingItem;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -7,7 +8,17 @@ import lombok.Builder;
 import lombok.Data;
 import org.jspecify.annotations.Nullable;
 
-
+/**
+ * Data Transfer Object (DTO) for creating a new {@link ShoppingItem}.
+ * <p>
+ * This DTO supports the Builder pattern for flexible object creation.
+ * All fields can be set using getters and setters or the Builder.
+ * <p>
+ * Optional fields can be null.
+ * </p>
+ *
+ * @author Fabian Hardt
+ */
 @Data
 @Builder
 public class CreateShoppingItemRequest {

@@ -17,13 +17,19 @@ import java.util.Optional;
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
     /**
+     * Returns an optional with the category as value or an empty optional, if no category with
+     * the given name could be found.
      *
-     *
-     * @param name
-     * @return
+     * @param name name of the searched category
+     * @return optional with the category as value or an empty optional
      */
-    //TODO JavaDoc
     Optional<Category> findByName(String name);
 
-    boolean existsByName(String categoryByName);
+    /**
+     * Returns {@code true} if a category with the given name exists; otherwise {@code false}
+     *
+     * @param categoryName name of the category
+     * @return {@code true} if a category with the given name exists; otherwise {@code false}
+     */
+    boolean existsByName(String categoryName);
 }

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  *
  * @author Fabian Hardt
  */
-//TODO JavaDoc
 @ResponseStatus(HttpStatus.NOT_FOUND)
 public class ItemNotFoundException extends RuntimeException {
 

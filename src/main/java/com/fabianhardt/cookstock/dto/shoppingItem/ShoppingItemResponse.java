@@ -1,12 +1,25 @@
 package com.fabianhardt.cookstock.dto.shoppingItem;
 
 
+import com.fabianhardt.cookstock.entity.ShoppingItem;
 import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 
+
+/**
+ * Data Transfer Object (DTO) of an {@link ShoppingItem}.
+ * <p>
+ * This DTO supports the Builder pattern for flexible object creation.
+ * All fields can be set using getters and setters or the Builder.
+ * <p>
+ * Optional fields can be null. The fields 'id', 'name' and 'purchased' are required.
+ * </p>
+ *
+ * @author Fabian Hardt
+ */
 @Data
 @Builder
 public class ShoppingItemResponse {

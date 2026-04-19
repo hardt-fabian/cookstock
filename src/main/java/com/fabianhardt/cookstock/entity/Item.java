@@ -2,7 +2,6 @@ package com.fabianhardt.cookstock.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.validator.constraints.UUID;
 
 import java.time.LocalDate;
 

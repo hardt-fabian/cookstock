@@ -8,21 +8,35 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+/**
+ * Class to initialize the default data.
+ *
+ * @author Fabian Hardt
+ */
 @Component
 @RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
 
+    /**
+     * Interface to the category repository
+     */
     private final CategoryRepository categoryRepository;
 
+    /**
+     * Interface to the shopping list repository
+     */
     private final ShoppingListRepository shoppingListRepository;
 
     @Override
     public void run(String... args) {
-        this.initCategories();
+        this.initializeCategories();
         this.createDefaultShoppingListIfNotExists();
     }
 
-    private void initCategories() {
+    /**
+     * Initializes the default categories
+     */
+    private void initializeCategories() {
         this.createCategoryIfNotExists("Obst", "🍎");
         this.createCategoryIfNotExists("Gemüse", "🥦");
         this.createCategoryIfNotExists("Getränke", "🥤");
@@ -40,15 +54,24 @@ public class DataInitializer implements CommandLineRunner {
         this.createCategoryIfNotExists("Haushalt", "🧽");
     }
 
-    private void createCategoryIfNotExists(String categoryName, String icon) {
-        if (!this.categoryRepository.existsByName(categoryName)) {
+    /**
+     * Creates and saves the category if it does not exist
+     *
+     * @param name name of the category
+     * @param icon icon og the category
+     */
+    private void createCategoryIfNotExists(String name, String icon) {
+        if (!this.categoryRepository.existsByName(name)) {
             Category category = new Category();
-            category.setName(categoryName);
-            category.setIcon(icon); // optional, falls du das Feld hast
+            category.setName(name);
+            category.setIcon(icon);
             this.categoryRepository.save(category);
         }
     }
 
+    /**
+     * Creates and saves the default shopping list if it does not exist
+     */
     private void createDefaultShoppingListIfNotExists() {
         if (!this.shoppingListRepository.existsByDefaultListTrue()) {
             ShoppingList defaultShoppingList = new ShoppingList();

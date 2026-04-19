@@ -65,8 +65,7 @@ public class LocationService {
      */
     public LocationResponse createLocation(CreateLocationRequest request) {
         String locationName = request.getName();
-        Optional<Location> locationByName = this.locationRepository.findByName(locationName);
-        if (locationByName.isPresent()) {
+        if (this.locationRepository.existsByName(locationName)) {
             throw new LocationAlreadyExistsException(locationName);
         }
 

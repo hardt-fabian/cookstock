@@ -19,8 +19,18 @@ import org.springframework.data.repository.query.Param;
  */
 public interface ShoppingItemRepository extends JpaRepository<ShoppingItem, Long> {
 
+    /**
+     * Deletes all shopping items which are on the specified shopping list
+     *
+     * @param shoppingList the shopping list on which the shipping items are
+     */
     void deleteAllByShoppingList(ShoppingList shoppingList);
 
+    /**
+     * Removes the category from all shopping items that have the category.
+     *
+     * @param category the category which should be removed from the shopping items
+     */
     @Modifying
     @Query("UPDATE ShoppingItem shoppingItem SET shoppingItem.category = null " +
            "WHERE shoppingItem.category = :category")

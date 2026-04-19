@@ -17,4 +17,12 @@ import java.util.Optional;
 public interface LocationRepository extends JpaRepository<Location, Long> {
 
     Optional<Location> findByName(String name);
+
+    /**
+     * Returns {@code true} if a location with the given name exists; otherwise {@code false}
+     *
+     * @param locationName name of the location
+     * @return {@code true} if a location with the given name exists; otherwise {@code false}
+     */
+    boolean existsByName(String locationName);
 }

@@ -56,8 +56,8 @@ public class CategoryService {
      * @param shoppingItemRepository Interface to the shopping item repository
      * @param categoryMapper Helper to map data transfer objects to categories and vice versa
      */
-    public CategoryService(CategoryRepository categoryRepository, ItemRepository itemRepository, ShoppingItemRepository shoppingItemRepository,
-            CategoryMapper categoryMapper) {
+    public CategoryService(CategoryRepository categoryRepository, ItemRepository itemRepository,
+            ShoppingItemRepository shoppingItemRepository, CategoryMapper categoryMapper) {
         this.categoryRepository = categoryRepository;
         this.itemRepository = itemRepository;
         this.shoppingItemRepository = shoppingItemRepository;

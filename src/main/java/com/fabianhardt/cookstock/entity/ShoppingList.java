@@ -39,7 +39,8 @@ public class ShoppingList {
     private String name;
 
     /**
-     * {@code true} if this shopping list is the default list; otherwise {@code false}
+     * {@code true} if this shopping list is the default list; otherwise {@code false}.
+     * Only one shopping list can be the default list.
      */
     private boolean defaultList;
 
